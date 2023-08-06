@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(require('./src/routes/routes.js'))
 
 
-app.listen(3000, function () {
-  console.log('Ejemplo de que el server corre en el puerto 3000');
+app.listen(4000, function () {
+  console.log('Ejemplo de que el server corre en el puerto 4000');
 }); 
 
