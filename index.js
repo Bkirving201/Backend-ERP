@@ -3,6 +3,8 @@ const app = express();
 const morgan = require('morgan')
 require("dotenv").config();
 const { dbConnection } = require("./src/database/database");
+const cors = require("cors");
+
 
 dbConnection();
 
@@ -10,10 +12,12 @@ dbConnection();
 app.use(express.static(__dirname + '/src/public'));
 
 
-
 //middlewares
 app.use(morgan('dev'));
+app.use(cors());
 app.use(express.json());
+
+
 
 //rutasAPI
 app.use(require('./src/routes/routes.js'))
